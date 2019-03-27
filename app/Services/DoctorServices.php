@@ -50,6 +50,10 @@ class DoctorServices
     {
         $blocked = Cache::has('blockedSlots') ? Cache::get('blockedSlots') : [];
 
+        if (count($blocked) && isset($blocked[$key])) {
+            return true;
+        }
+
         $blocked[$key] = Auth::user()->id;
 
         Cache::forever('blockedSlots', $blocked);

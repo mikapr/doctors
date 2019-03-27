@@ -38,8 +38,6 @@ $(function () {
 
     $(document).on('click', '.cancel-service, .confirm-service', function () {
 
-        $.post('/unblock-slot', {doctor: selectedDoctor, day: selectedDay, slot: selectedSlot});
-
         if ($(this).hasClass('confirm-service')) {
             $(this).closest('#timeModal').modal('hide');
 
@@ -51,6 +49,7 @@ $(function () {
 
             }).fail(function(xhr, status, error) {
                 $('#notifyModal').modal('show').find('.modal-body').html(xhr.responseText);
+                getSchedule(selectedTimestamp);
             });
         }
 
@@ -64,6 +63,7 @@ $(function () {
 
             }).fail(function() {
                 $('#notifyModal').modal('show').find('.modal-body').html('Возникла ошибка');
+                getSchedule(selectedTimestamp);
             });
         }
     });
