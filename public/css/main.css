@@ -1,0 +1,27 @@
+.title {
+    padding-bottom: 20px;
+}
+
+.services, .doctors, .slot:not(.disabled):not(.is-my) {
+    cursor: pointer;
+}
+
+.service, .doctor, .slot {
+    padding: 5px;
+}
+.service:hover, .doctor-services>div:hover, .slot:not(.disabled):hover {
+    background: #636b6f;
+}
+
+.selected, .is-selected {
+    background-color: #5cd08d;
+}
+
+.slot.disabled {
+    color: #999999;
+}
+
+.doctor-services {
+    margin-left: 10px;
+    font-size: 12px;
+}

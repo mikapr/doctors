@@ -19,6 +19,7 @@ return [
     */
 
     'default' => env('CACHE_DRIVER', 'file'),
+    'lifetime' => env('CACHE_LIFETIME', 120),
 
     /*
     |--------------------------------------------------------------------------
